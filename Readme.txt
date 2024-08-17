@@ -1,7 +1,7 @@
 admin
 url:http://localhost/Online-examination-system/adminpanel/admin/
 Username: admin@mail.com
-Password: alphacodecamp
+Password: 123456
 
 user
 url: http://localhost/Online-examination-system/
