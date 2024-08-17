@@ -39,7 +39,7 @@ CREATE TABLE `admin_acc` (
 --
 
 INSERT INTO `admin_acc` (`admin_id`, `admin_user`, `admin_pass`) VALUES
-(1, 'admin@mail.com', 'alphacodecamp');
+(1, 'admin@mail.com', '123456');
 
 -- --------------------------------------------------------
 
