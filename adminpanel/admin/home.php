@@ -2,21 +2,15 @@
 session_start();
 
 if(!isset($_SESSION['admin']['adminnakalogin']) == true) header("location:index.php");
-
-
  ?>
+ 
 <?php include("../../conn.php"); ?>
-<!-- MAO NI ANG HEADER -->
 <?php include("includes/header.php"); ?>      
 
 
 <div class="app-main">
-<!-- sidebar diri  -->
 <?php include("includes/sidebar.php"); ?>
 
-
-
-<!-- Condition If unza nga page gi click -->
 <?php 
    @$page = $_GET['page'];
 
@@ -38,23 +32,8 @@ if(!isset($_SESSION['admin']['adminnakalogin']) == true) header("location:index.
      else if($page == "manage-examinee")
      {
       include("pages/manage-examinee.php");
-     }
-     else if($page == "ranking-exam")
-     {
-      //include("pages/ranking-exam.php");
-     }
-     else if($page == "feedbacks")
-     {
-      //include("pages/feedbacks.php");
-     }
-     else if($page == "examinee-result")
-     {
-      //include("pages/examinee-result.php");
-     }
-
-       
+     } 
    }
-   // Else ang home nga page mo display
    else
    {
      include("pages/home.php"); 
@@ -64,7 +43,6 @@ if(!isset($_SESSION['admin']['adminnakalogin']) == true) header("location:index.
  ?> 
 
 
-<!-- MAO NI IYA FOOTER -->
 <?php include("includes/footer.php"); ?>
 
 <?php include("includes/modals.php"); ?>
