@@ -9,6 +9,9 @@ if(!isset($_SESSION['examineeSession']['examineenakalogin']) == true) header("lo
 <!-- MAO NI ANG HEADER -->
 <?php include("includes/header.php"); ?>      
 
+<!-- UI THEME DIRI -->
+<?php include("includes/ui-theme.php"); ?>
+
 <div class="app-main">
 <!-- sidebar diri  -->
 <?php include("includes/sidebar.php"); ?>
