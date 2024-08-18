@@ -1,7 +1,7 @@
-teacher account
-  admin@mail.com
-  123456
+teacher account: localhost/CNPM_NC_final/adminpanel/admin
+admin@mail.com
+123456
 
-student account
+student account: localhost/CNPM_NC_final
   dave@gmail.com
   dave
