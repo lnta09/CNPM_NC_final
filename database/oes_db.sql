@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.1
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Nov 07, 2023 at 03:00 PM
--- Server version: 10.4.11-MariaDB
--- PHP Version: 7.4.2
+-- Máy chủ: 127.0.0.1
+-- Thời gian đã tạo: Th8 20, 2024 lúc 03:58 PM
+-- Phiên bản máy phục vụ: 10.4.32-MariaDB
+-- Phiên bản PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -19,42 +18,42 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `oes_db`
+-- Cơ sở dữ liệu: `oes_db`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `admin_acc`
+-- Cấu trúc bảng cho bảng `admin_acc`
 --
 
 CREATE TABLE `admin_acc` (
   `admin_id` int(11) NOT NULL,
   `admin_user` varchar(1000) NOT NULL,
   `admin_pass` varchar(1000) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data for table `admin_acc`
+-- Đang đổ dữ liệu cho bảng `admin_acc`
 --
 
 INSERT INTO `admin_acc` (`admin_id`, `admin_user`, `admin_pass`) VALUES
-(1, 'admin@mail.com', 'alphacodecamp');
+(1, 'admin@mail.com', '123456');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `course_tbl`
+-- Cấu trúc bảng cho bảng `course_tbl`
 --
 
 CREATE TABLE `course_tbl` (
   `cou_id` int(11) NOT NULL,
   `cou_name` varchar(1000) NOT NULL,
   `cou_created` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data for table `course_tbl`
+-- Đang đổ dữ liệu cho bảng `course_tbl`
 --
 
 INSERT INTO `course_tbl` (`cou_id`, `cou_name`, `cou_created`) VALUES
@@ -62,12 +61,13 @@ INSERT INTO `course_tbl` (`cou_id`, `cou_name`, `cou_created`) VALUES
 (26, 'BSIT', '2019-11-25 13:22:42'),
 (65, 'BSCRIM', '2019-12-02 09:25:36'),
 (66, 'COMPUTER', '2023-11-07 13:37:50'),
-(67, 'COM456', '2023-11-07 13:38:18');
+(72, 'H', '2024-08-10 14:05:58'),
+(74, 'TES', '2024-08-20 13:51:58');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `examinee_tbl`
+-- Cấu trúc bảng cho bảng `examinee_tbl`
 --
 
 CREATE TABLE `examinee_tbl` (
@@ -80,10 +80,10 @@ CREATE TABLE `examinee_tbl` (
   `exmne_email` varchar(1000) NOT NULL,
   `exmne_password` varchar(1000) NOT NULL,
   `exmne_status` varchar(1000) NOT NULL DEFAULT 'active'
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data for table `examinee_tbl`
+-- Đang đổ dữ liệu cho bảng `examinee_tbl`
 --
 
 INSERT INTO `examinee_tbl` (`exmne_id`, `exmne_fullname`, `exmne_course`, `exmne_gender`, `exmne_birthdate`, `exmne_year_level`, `exmne_email`, `exmne_password`, `exmne_status`) VALUES
@@ -92,12 +92,12 @@ INSERT INTO `examinee_tbl` (`exmne_id`, `exmne_fullname`, `exmne_course`, `exmne
 (6, 'Glenn Duerme', '26', 'female', '2019-12-24', 'third year', 'glenn@gmail.com', 'glenn', 'active'),
 (7, 'Maria Duerme', '26', 'female', '2018-11-25', 'second year', 'maria@gmail.com', 'maria', 'active'),
 (8, 'Dave Limasac', '26', 'female', '2019-12-21', 'second year', 'dave@gmail.com', 'dave', 'active'),
-(10, 'Sam', '67', 'male', '2023-11-07', 'first year', 'sam@mail.com', 'sam', 'active');
+(10, 'Sam', '66', 'male', '2023-11-07', 'first year', 'sam@mail.com', 'sam', 'active');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `exam_answers`
+-- Cấu trúc bảng cho bảng `exam_answers`
 --
 
 CREATE TABLE `exam_answers` (
@@ -108,10 +108,10 @@ CREATE TABLE `exam_answers` (
   `exans_answer` varchar(1000) NOT NULL,
   `exans_status` varchar(1000) NOT NULL DEFAULT 'new',
   `exans_created` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data for table `exam_answers`
+-- Đang đổ dữ liệu cho bảng `exam_answers`
 --
 
 INSERT INTO `exam_answers` (`exans_id`, `axmne_id`, `exam_id`, `quest_id`, `exans_answer`, `exans_status`, `exans_created`) VALUES
@@ -149,12 +149,14 @@ INSERT INTO `exam_answers` (`exans_id`, `axmne_id`, `exam_id`, `quest_id`, `exan
 (326, 9, 25, 36, '4', 'new', '2020-01-12 05:10:11'),
 (327, 9, 26, 37, '4', 'new', '2020-01-12 05:13:34'),
 (328, 10, 26, 37, '4', 'new', '2023-11-07 13:42:35'),
-(329, 10, 26, 38, '12', 'new', '2023-11-07 13:42:35');
+(329, 10, 26, 38, '12', 'new', '2023-11-07 13:42:35'),
+(330, 8, 11, 30, 'asd', 'new', '2024-08-20 05:54:58'),
+(331, 8, 11, 29, 'dfg', 'new', '2024-08-20 05:54:58');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `exam_attempt`
+-- Cấu trúc bảng cho bảng `exam_attempt`
 --
 
 CREATE TABLE `exam_attempt` (
@@ -162,10 +164,10 @@ CREATE TABLE `exam_attempt` (
   `exmne_id` int(11) NOT NULL,
   `exam_id` int(11) NOT NULL,
   `examat_status` varchar(1000) NOT NULL DEFAULT 'used'
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data for table `exam_attempt`
+-- Đang đổ dữ liệu cho bảng `exam_attempt`
 --
 
 INSERT INTO `exam_attempt` (`examat_id`, `exmne_id`, `exam_id`, `examat_status`) VALUES
@@ -176,12 +178,13 @@ INSERT INTO `exam_attempt` (`examat_id`, `exmne_id`, `exam_id`, `examat_status`)
 (55, 9, 24, 'used'),
 (56, 9, 25, 'used'),
 (57, 9, 26, 'used'),
-(58, 10, 26, 'used');
+(58, 10, 26, 'used'),
+(59, 8, 11, 'used');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `exam_question_tbl`
+-- Cấu trúc bảng cho bảng `exam_question_tbl`
 --
 
 CREATE TABLE `exam_question_tbl` (
@@ -194,10 +197,10 @@ CREATE TABLE `exam_question_tbl` (
   `exam_ch4` varchar(1000) NOT NULL,
   `exam_answer` varchar(1000) NOT NULL,
   `exam_status` varchar(1000) NOT NULL DEFAULT 'active'
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data for table `exam_question_tbl`
+-- Đang đổ dữ liệu cho bảng `exam_question_tbl`
 --
 
 INSERT INTO `exam_question_tbl` (`eqt_id`, `exam_id`, `exam_question`, `exam_ch1`, `exam_ch2`, `exam_ch3`, `exam_ch4`, `exam_answer`, `exam_status`) VALUES
@@ -230,7 +233,7 @@ INSERT INTO `exam_question_tbl` (`eqt_id`, `exam_id`, `exam_question`, `exam_ch1
 -- --------------------------------------------------------
 
 --
--- Table structure for table `exam_tbl`
+-- Cấu trúc bảng cho bảng `exam_tbl`
 --
 
 CREATE TABLE `exam_tbl` (
@@ -241,10 +244,10 @@ CREATE TABLE `exam_tbl` (
   `ex_questlimit_display` int(11) NOT NULL,
   `ex_description` varchar(1000) NOT NULL,
   `ex_created` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data for table `exam_tbl`
+-- Đang đổ dữ liệu cho bảng `exam_tbl`
 --
 
 INSERT INTO `exam_tbl` (`ex_id`, `cou_id`, `ex_title`, `ex_time_limit`, `ex_questlimit_display`, `ex_description`, `ex_created`) VALUES
@@ -253,12 +256,12 @@ INSERT INTO `exam_tbl` (`ex_id`, `cou_id`, `ex_title`, `ex_time_limit`, `ex_ques
 (13, 26, 'Exam Again', '5', 0, 'again and again\r\n', '2019-11-30 08:24:54'),
 (24, 65, 'math', '10', 5, 'basic math', '2020-01-12 05:04:45'),
 (25, 65, 'math 2', '10', 3, 'basic math 2', '2020-01-12 05:08:44'),
-(26, 67, 'math3', '10', 3, 'basic math3', '2023-11-07 13:42:08');
+(26, 66, 'math3', '10', 3, 'basic math3', '2024-08-20 01:36:57');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `feedbacks_tbl`
+-- Cấu trúc bảng cho bảng `feedbacks_tbl`
 --
 
 CREATE TABLE `feedbacks_tbl` (
@@ -267,10 +270,10 @@ CREATE TABLE `feedbacks_tbl` (
   `fb_exmne_as` varchar(1000) NOT NULL,
   `fb_feedbacks` varchar(1000) NOT NULL,
   `fb_date` varchar(1000) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data for table `feedbacks_tbl`
+-- Đang đổ dữ liệu cho bảng `feedbacks_tbl`
 --
 
 INSERT INTO `feedbacks_tbl` (`fb_id`, `exmne_id`, `fb_exmne_as`, `fb_feedbacks`, `fb_date`) VALUES
@@ -284,105 +287,105 @@ INSERT INTO `feedbacks_tbl` (`fb_id`, `exmne_id`, `fb_exmne_as`, `fb_feedbacks`,
 (11, 10, 'Sam', 'Nice quest', 'November 07, 2023');
 
 --
--- Indexes for dumped tables
+-- Chỉ mục cho các bảng đã đổ
 --
 
 --
--- Indexes for table `admin_acc`
+-- Chỉ mục cho bảng `admin_acc`
 --
 ALTER TABLE `admin_acc`
   ADD PRIMARY KEY (`admin_id`);
 
 --
--- Indexes for table `course_tbl`
+-- Chỉ mục cho bảng `course_tbl`
 --
 ALTER TABLE `course_tbl`
   ADD PRIMARY KEY (`cou_id`);
 
 --
--- Indexes for table `examinee_tbl`
+-- Chỉ mục cho bảng `examinee_tbl`
 --
 ALTER TABLE `examinee_tbl`
   ADD PRIMARY KEY (`exmne_id`);
 
 --
--- Indexes for table `exam_answers`
+-- Chỉ mục cho bảng `exam_answers`
 --
 ALTER TABLE `exam_answers`
   ADD PRIMARY KEY (`exans_id`);
 
 --
--- Indexes for table `exam_attempt`
+-- Chỉ mục cho bảng `exam_attempt`
 --
 ALTER TABLE `exam_attempt`
   ADD PRIMARY KEY (`examat_id`);
 
 --
--- Indexes for table `exam_question_tbl`
+-- Chỉ mục cho bảng `exam_question_tbl`
 --
 ALTER TABLE `exam_question_tbl`
   ADD PRIMARY KEY (`eqt_id`);
 
 --
--- Indexes for table `exam_tbl`
+-- Chỉ mục cho bảng `exam_tbl`
 --
 ALTER TABLE `exam_tbl`
   ADD PRIMARY KEY (`ex_id`);
 
 --
--- Indexes for table `feedbacks_tbl`
+-- Chỉ mục cho bảng `feedbacks_tbl`
 --
 ALTER TABLE `feedbacks_tbl`
   ADD PRIMARY KEY (`fb_id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT cho các bảng đã đổ
 --
 
 --
--- AUTO_INCREMENT for table `admin_acc`
+-- AUTO_INCREMENT cho bảng `admin_acc`
 --
 ALTER TABLE `admin_acc`
   MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `course_tbl`
+-- AUTO_INCREMENT cho bảng `course_tbl`
 --
 ALTER TABLE `course_tbl`
-  MODIFY `cou_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=68;
+  MODIFY `cou_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76;
 
 --
--- AUTO_INCREMENT for table `examinee_tbl`
+-- AUTO_INCREMENT cho bảng `examinee_tbl`
 --
 ALTER TABLE `examinee_tbl`
   MODIFY `exmne_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT for table `exam_answers`
+-- AUTO_INCREMENT cho bảng `exam_answers`
 --
 ALTER TABLE `exam_answers`
-  MODIFY `exans_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=330;
+  MODIFY `exans_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=332;
 
 --
--- AUTO_INCREMENT for table `exam_attempt`
+-- AUTO_INCREMENT cho bảng `exam_attempt`
 --
 ALTER TABLE `exam_attempt`
-  MODIFY `examat_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
+  MODIFY `examat_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
 
 --
--- AUTO_INCREMENT for table `exam_question_tbl`
+-- AUTO_INCREMENT cho bảng `exam_question_tbl`
 --
 ALTER TABLE `exam_question_tbl`
   MODIFY `eqt_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
--- AUTO_INCREMENT for table `exam_tbl`
+-- AUTO_INCREMENT cho bảng `exam_tbl`
 --
 ALTER TABLE `exam_tbl`
   MODIFY `ex_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
--- AUTO_INCREMENT for table `feedbacks_tbl`
+-- AUTO_INCREMENT cho bảng `feedbacks_tbl`
 --
 ALTER TABLE `feedbacks_tbl`
   MODIFY `fb_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
