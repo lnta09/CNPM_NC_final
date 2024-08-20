@@ -2,13 +2,17 @@
 session_start();
 
 if(!isset($_SESSION['admin']['adminnakalogin']) == true) header("location:index.php");
+
+
  ?>
- 
 <?php include("../../conn.php"); ?>
+
 <?php include("includes/header.php"); ?>      
 
 
+
 <div class="app-main">
+
 <?php include("includes/sidebar.php"); ?>
 
 <?php 
@@ -32,7 +36,14 @@ if(!isset($_SESSION['admin']['adminnakalogin']) == true) header("location:index.
      else if($page == "manage-examinee")
      {
       include("pages/manage-examinee.php");
-     } 
+     }
+     
+     else if($page == "examinee-result")
+     {
+      include("pages/examinee-result.php");
+     }
+
+       
    }
    else
    {

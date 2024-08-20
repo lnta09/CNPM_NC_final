@@ -1,6 +1,6 @@
 
 <?php 
-  include("../../../conn.php"); 
+  include("../../../conn.php");
   $id = $_GET['id'];
  
   $selCourse = $conn->query("SELECT * FROM course_tbl WHERE cou_id='$id' ")->fetch(PDO::FETCH_ASSOC);
@@ -22,8 +22,6 @@
 </form>
   </div>
 </fieldset>
-
-
 
 
 

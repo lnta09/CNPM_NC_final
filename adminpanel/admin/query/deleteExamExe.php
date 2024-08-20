@@ -1,7 +1,7 @@
 <?php 
  include("../../../conn.php");
 
- 
+
 extract($_POST);
 
 $delExam = $conn->query("DELETE  FROM exam_tbl WHERE ex_id='$id'  ");

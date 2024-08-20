@@ -6,14 +6,10 @@ if(!isset($_SESSION['admin']['adminnakalogin']) == true) header("location:index.
 
  ?>
 <?php include("../../conn.php"); ?>
-<!-- HEADER -->
 <?php include("includes/header.php"); ?>      
 
-<!-- UI THEME -->
-<?php include("includes/ui-theme.php"); ?>
 
 <div class="app-main">
-<!-- sidebar  -->
 <?php include("includes/sidebar.php"); ?>
 
 
@@ -142,7 +138,7 @@ if(!isset($_SESSION['admin']['adminnakalogin']) == true) header("location:index.
                                                         <td >
                                                             <b><?php echo $i++ ; ?> .) <?php echo $selQuestionRow['exam_question']; ?></b><br>
                                                             <?php 
-                                                              // Choice A
+                                                              
                                                               if($selQuestionRow['exam_ch1'] == $selQuestionRow['exam_answer'])
                                                               { ?>
                                                                 <span class="pl-4 text-success">A - <?php echo  $selQuestionRow['exam_ch1']; ?></span><br>
@@ -152,7 +148,7 @@ if(!isset($_SESSION['admin']['adminnakalogin']) == true) header("location:index.
                                                                 <span class="pl-4">A - <?php echo $selQuestionRow['exam_ch1']; ?></span><br>
                                                               <?php }
 
-                                                              // Choice B
+                                                              
                                                               if($selQuestionRow['exam_ch2'] == $selQuestionRow['exam_answer'])
                                                               { ?>
                                                                 <span class="pl-4 text-success">B - <?php echo $selQuestionRow['exam_ch2']; ?></span><br>
@@ -162,7 +158,7 @@ if(!isset($_SESSION['admin']['adminnakalogin']) == true) header("location:index.
                                                                 <span class="pl-4">B - <?php echo $selQuestionRow['exam_ch2']; ?></span><br>
                                                               <?php }
 
-                                                              // Choice C
+                                                              
                                                               if($selQuestionRow['exam_ch3'] == $selQuestionRow['exam_answer'])
                                                               { ?>
                                                                 <span class="pl-4 text-success">C - <?php echo $selQuestionRow['exam_ch3']; ?></span><br>
@@ -172,7 +168,7 @@ if(!isset($_SESSION['admin']['adminnakalogin']) == true) header("location:index.
                                                                 <span class="pl-4">C - <?php echo $selQuestionRow['exam_ch3']; ?></span><br>
                                                               <?php }
 
-                                                              // Choice D
+                                                              
                                                               if($selQuestionRow['exam_ch4'] == $selQuestionRow['exam_answer'])
                                                               { ?>
                                                                 <span class="pl-4 text-success">D - <?php echo $selQuestionRow['exam_ch4']; ?></span><br>
@@ -225,9 +221,7 @@ if(!isset($_SESSION['admin']['adminnakalogin']) == true) header("location:index.
                
             </div>
       
-        
 
-<!-- FOOTER -->
 <?php include("includes/footer.php"); ?>
 
 <?php include("includes/modals.php"); ?>

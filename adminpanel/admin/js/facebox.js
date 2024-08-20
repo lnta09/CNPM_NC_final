@@ -2,7 +2,7 @@
  * Facebox (for jQuery)
  * version: 1.3
  * @requires jQuery v1.2 or later
- * @homepage https://github.com/defunkt/facebox 
+ * @homepage https://github.com/defunkt/facebox
  *
  * Licensed under the MIT:
  *   http://www.opensource.org/licenses/mit-license.php
