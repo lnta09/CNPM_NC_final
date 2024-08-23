@@ -1,4 +1,4 @@
-Ứng dụng thi trắc nghiệm online
+Ứng dụng thi trắc nghiệm online.
 Sản phẩm cuối kỳ môn "Công Nghệ Phần Mềm Nâng Cao" của Nhóm 2
 
 1. Phân quyền:
