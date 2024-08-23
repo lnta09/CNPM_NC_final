@@ -2,10 +2,10 @@
 Sản phẩm cuối kỳ môn "Công Nghệ Phần Mềm Nâng Cao" của Nhóm 2
 
 1. Phân quyền:
-  1.1. Giáo viên
-  1.2. Sinh viên
+1.1. Giáo viên
+1.2. Sinh viên
 2. Chức năng:
-  2.1. Giáo viên:
+2.1. Giáo viên:
     - Đăng nhập + Đăng xuất
     - Quản lý lớp học (crud)
     - Quản lý kỳ thi (crud), thêm kỳ thi vào lớp học
@@ -13,7 +13,7 @@ Sản phẩm cuối kỳ môn "Công Nghệ Phần Mềm Nâng Cao" của Nhóm 
     - Quản lý ngân hàng câu hỏi (crud), thêm câu hỏi vào kỳ thi
     - Thiết lập thời gian đếm ngược trong kỳ thi và tự động submit bài thi
     - Thống kê kết quả kỳ thi
-  2.2. Sinh viên:
+2.2. Sinh viên:
     - Đăng nhập và đăng xuất
     - Chọn tham gia kỳ thi đã được giáo viên thêm vào
     - Trong bài thi, hết thời gian đếm ngược sẽ tự động nộp bài, submit bài trước khi hết thời gian sẽ hiển thị cảnh báo nếu có câu hỏi chưa hoàn thành
@@ -35,10 +35,10 @@ Sản phẩm cuối kỳ môn "Công Nghệ Phần Mềm Nâng Cao" của Nhóm 
 - Bước 8: Chọn go để kết thức.
 5. Web application
 - Teacher: 
-  url: http://localhost/CNPM_NC_nhom2/adminpanel/admin/
-    acc: admin@mail.com
-    pass: 123456
+  + url: http://localhost/CNPM_NC_nhom2/adminpanel/admin/
+  + acc: admin@mail.com
+  + pass: 123456
 - Student:
-  url: http://localhost/CNPM_NC_nhom2/
-    acc: dave@gmail.com
-    pass: dave
+  + url: http://localhost/CNPM_NC_nhom2/
+  + acc: dave@gmail.com
+  + pass: dave
